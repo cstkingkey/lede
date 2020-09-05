@@ -178,7 +178,7 @@ $$(call addfield,Depends,$$(Package/$(1)/DEPENDS)
 )$$(call addfield,LicenseFiles,$(LICENSE_FILES)
 )$$(call addfield,Section,$(SECTION)
 )$$(call addfield,Require-User,$(USERID)
-)$$(call addfield,SourceDateEpoch,$(shell $(TOPDIR)/scripts/get_source_date_epoch.sh $(SOURCE))
+)$$(call addfield,SourceDateEpoch,$(PKG_SOURCE_DATE_EPOCH)
 )$(if $(PKG_CPE_ID),CPE-ID: $(PKG_CPE_ID)
 )$(if $(filter hold,$(PKG_FLAGS)),Status: unknown hold not-installed
 )$(if $(filter essential,$(PKG_FLAGS)),Essential: yes

@@ -6,7 +6,7 @@
 #
 
 ifdef CONFIG_STRIP_KERNEL_EXPORTS
-  KERNEL_MAKEOPTS += \
+  KERNEL_MAKEOPTS_IMAGE += \
 	EXTRA_LDSFLAGS="-I$(KERNEL_BUILD_DIR) -include symtab.h"
 endif
 
@@ -151,7 +151,7 @@ endef
 
 define Kernel/CompileImage/Default
 	rm -f $(TARGET_DIR)/init
-	+$(KERNEL_MAKE) $(if $(KERNELNAME),$(KERNELNAME),all)
+	+$(KERNEL_MAKE) $(KERNEL_MAKEOPTS_IMAGE) $(if $(KERNELNAME),$(KERNELNAME),all)
 	$(call Kernel/CopyImage)
 endef
 

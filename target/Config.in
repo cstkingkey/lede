@@ -48,6 +48,9 @@ config USES_DEVICETREE
 config USES_INITRAMFS
 	bool
 
+config USES_SEPERATE_INITRAMFS
+	bool
+
 config USES_SQUASHFS
 	bool
 

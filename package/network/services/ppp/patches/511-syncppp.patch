@@ -55,8 +55,8 @@
  # CC = gcc
  #
  COPTS = -O2 -pipe -Wall -g
--LIBS =
-+LIBS = -lpthread
+-LIBS = -lrt
++LIBS = -lrt -lpthread
  
  # Uncomment the next line to include support for Microsoft's
  # MS-CHAP authentication protocol.  Also, edit plugins/radius/Makefile.linux.

@@ -18,7 +18,7 @@ Signed-off-by: Qi Liu <liuqi_colin@msn.com>
 
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -75,9 +75,9 @@ INSTALL(TARGETS blockd RUNTIME DESTINATI
+@@ -77,9 +77,9 @@ INSTALL(TARGETS blockd RUNTIME DESTINATI
  ADD_EXECUTABLE(block block.c probe.c probe-libblkid.c)
  IF(DEFINED CMAKE_UBIFS_EXTROOT)
  	ADD_DEFINITIONS(-DUBIFS_EXTROOT)
@@ -88,7 +88,7 @@ Signed-off-by: Qi Liu <liuqi_colin@msn.com>
  }
 --- /dev/null
 +++ b/libfstools/fstype.h
-@@ -0,0 +1,12 @@
+@@ -0,0 +1,13 @@
 +#ifndef _FS_TYPE_H__
 +#define _FS_TYPE_H__
 +enum {
@@ -99,12 +99,13 @@ Signed-off-by: Qi Liu <liuqi_colin@msn.com>
 +	FS_UBIFS,
 +	FS_F2FS,
 +	FS_EXT4,
++	FS_TARGZ,
 +};
 +#endif
 \ No newline at end of file
 --- a/libfstools/libfstools.h
 +++ b/libfstools/libfstools.h
-@@ -18,19 +18,10 @@
+@@ -18,20 +18,10 @@
  #include <libubox/blob.h>
  #include <libubox/ulog.h>
  #include <libubox/utils.h>
@@ -120,6 +121,7 @@ Signed-off-by: Qi Liu <liuqi_colin@msn.com>
 -	FS_UBIFS,
 -	FS_F2FS,
 -	FS_EXT4,
+-	FS_TARGZ,
 -};
 -
  enum fs_state {

@@ -32,7 +32,10 @@ define Package/uclient-fetch
   SECTION:=net
   CATEGORY:=Network
   TITLE:=Tiny wget replacement using libuclient
-  ALTERNATIVES:=200:/usr/bin/wget:/bin/uclient-fetch
+  ALTERNATIVES:=
+  $(if $(CONFIG_PACKAGE_wget), ,ALTERNATIVES+= \
+    200:/usr/bin/wget:/bin/uclient-fetch \
+    200:/usr/bin/wget-ssl:/bin/uclient-fetch)
   PROVIDES:=wget
   DEPENDS:=+libuclient
 endef

@@ -4,7 +4,7 @@ if [ ! -f "/tmp/adbyby.updated" ];then
   wget_ok="0"
   while [ "$wget_ok" = "0" ] 
     do 
-    wget-ssl --spider --quiet --timeout=3 www.baidu.com
+    wget-ssl --spider --quiet --timeout=3 https://www.baidu.com
     if [ "$?" == "0" ]; then
       wget_ok="1"
       
